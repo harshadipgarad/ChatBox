@@ -4,25 +4,18 @@ This is a simple, command-line based AI chatbot application built using Python.
 It connects with the OpenRouter API to fetch smart and contextual responses based on user queries.
 
 ---
-
-## Project Architecture
+##  Project  Architecture
 
 ```mermaid
-graph TD
-    A[👤 User Input] -->|Types message| B[💻 Python Script / VS Code Terminal]
-    B -->|Extracts API Key| C[.env File]
-    B -->|Sends HTTP POST Request| D[🌐 OpenRouter API Gateway]
-    D -->|Forwards Prompt| E[🤖 AI Language Model]
-    E -->|Generates Text Response| D
-    D -->|Returns JSON Response| B
-    B -->|Prints Output| F[💬 Bot Response to User]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#eee,stroke:#333,stroke-width:1px
-    style D fill:#fbf,stroke:#333,stroke-width:2px
-    style E fill:#bfb,stroke:#333,stroke-width:2px
-    style F fill:#fff,stroke:#333,stroke-width:2px```
+flowchart LR
+    U[👤 User] --> A[💻 Python Application]
+    E[🔐 .env File] --> A
+    A --> B[🌐 OpenRouter API]
+    B --> C[🤖 AI Model]
+    C --> B
+    B --> A
+    A --> D[💬 AI Response]
+```
 
 ✨ Features
 Real-time Interaction: Users can chat with the AI model directly via the terminal interface.
